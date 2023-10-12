@@ -1,53 +1,41 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nchra jwiya</title>
-        <link rel="Stylesheet" href="style.css"
-    </head>
-    <body>
-<div class="card">
-    <div class="search">
-        <input type="text" placeholder="Enter city name" spellcheck="false">
-        <button><img src="images/search.png" alt=""></button>
-    </div>
-    <div class="weather">
-    <img src="images/rain.png" class="weather-icon">
-    <h1 class="temp">20°C</h1>
-    <h2 class="city">Khemisset</h2>
-    <div class="details">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nchra jwiya</title>
+    <link rel="Stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="search">
+        <input
+          type="text"
+          placeholder="Enter city name"
+          spellcheck="false"
+          class="input-value"
+        />
+
+        <button class="btn-search">
+          <img src="images/search.png" alt="" />
+        </button>
+      </div>
+      <div class="weather"></div>
+      <img src="images/rain.png" class="weather-icon" />
+      <h1 class="temp">-</h1>
+      <h2 class="city">-</h2>
+      <div class="details">
         <div class="col">
-            <img src="images/humidity.png">
-            <p class="humidity">55%</p>
-            <p>humidity</p>
+          <img src="images/humidity.png" />
+          <p class="humidity">-</p>
+          <p>humidity</p>
         </div>
         <div class="col">
-            <img src="images/wind.png">
-            <p class="wind">5km/h</p>
-            <p>wind Speed</p>
+          <img src="images/wind.png" />
+          <p class="wind">-</p>
+          <p>wind Speed</p>
+        </div>
+      </div>
     </div>
-</div>
-
-<script>
-
-const apiKey = "";
-const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=khemisset&appid=66f98dee8ae8437935a3711f01f79498&units=metric";
-async function checkweather(){
-    const response = await fetch(apiUrl + '&appid=&{apiKey}');
-    var data = await response.json();
-    console.log(data);
-
-    document.querySelector(".city").innerHTML =data.name;
-    document.querySelector(".temp").innerHTML =data.main.temp;
-    document.querySelector(".humidity").innerHTML =data.main.humidity;
-    document.querySelector(".wind").innerHTML =data.main.wind.speed;
-
-
-
-}
-
-checkweather();
-</script>
-
-    </body>
+    <script src="script.js"></script>
+  </body>
 </html>
